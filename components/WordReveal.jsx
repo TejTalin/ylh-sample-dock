@@ -19,7 +19,7 @@ export default function WordReveal({ text, as = 'h1', className = '', style = {}
       variants={container} initial="hidden" whileInView="visible" viewport={VIEW} aria-label={text}
     >
       {words.map((w, i) => (
-        <motion.span key={i} variants={wordItem} style={{ display: 'inline-block' }}>{w}</motion.span>
+        <motion.span key={i} variants={wordItem} style={{ display: 'inline-block', willChange: 'opacity, transform' }}>{w}</motion.span>
       ))}
     </Tag>
   );

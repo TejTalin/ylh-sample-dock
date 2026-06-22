@@ -148,3 +148,29 @@ label {
 body.light-mode .form-error-banner {
   color: #b8453a;
 }
+
+/* Page transition: pure CSS, mount-triggered — cannot get stuck like a
+   JS-observer-based animation can, so this is safe to use on every route. */
+.page-transition {
+  animation: page-fade-in 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Reduce text flicker: promote headings/word-reveal spans to their own
+   GPU compositing layer so the browser doesn't repaint them on the CPU
+   during animation or font swap, and reserve consistent font metrics so
+   words don't visibly jump when the webfont finishes loading. */
+h1, h2, h3, .serif {
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition { animation: none; }
+}
