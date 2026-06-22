@@ -19,3 +19,5 @@ npm run dev
 - Animation style: bouncier, more kinetic entrance transitions
 - Cursor interaction: magnetic pull on buttons, tags, and team avatars
 - No persistent background graphic — clean surface, motion does the work
+
+
