@@ -1,4 +1,5 @@
 import './globals.css';
+import CursorSpotlight from '../components/CursorSpotlight';
 
 export const metadata = {
   title: 'Young Legal House | Where Young Legal Minds Meet',
@@ -17,7 +18,10 @@ export default function RootLayout({ children }) {
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
-      <body>{children}</body>
+      <body>
+        <CursorSpotlight size={560} color="180,200,255" intensity={0.20} />
+        {children}
+      </body>
     </html>
   );
 }
