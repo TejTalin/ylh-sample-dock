@@ -53,7 +53,7 @@ export default function CursorSpotlight({ size = 500, color = '255,255,255', int
         background: `radial-gradient(circle, rgba(${color},${intensity}) 0%, rgba(${color},${intensity * 0.4}) 35%, transparent 70%)`,
         pointerEvents: 'none',
         zIndex: 9999,
-        mixBlendMode: 'soft-light',
+        mixBlendMode: 'screen',
         willChange: 'transform',
       }}
     />

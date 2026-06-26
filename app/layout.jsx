@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
       <body>
-        <CursorSpotlight size={560} color="180,200,255" intensity={0.20} />
+        <CursorSpotlight size={560} color="180,200,255" intensity={0.45} />
         {children}
       </body>
     </html>
